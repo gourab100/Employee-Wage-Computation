@@ -1,23 +1,31 @@
 ﻿
 Console.WriteLine("Welcome to Employee Wage Computation Program on Master Branch");
-        int fulldayperhours = 0;
+        int fulldayperhours = 8;
+int workinghours=0;
         int wagesperhours = 20;
-        int present = 1;
+        int present = 2;
+        int parttime = 1;
         int daliy_wage = 0;
         Random random = new Random();
-        int employee = random.Next(0, 2);
+        int employee = random.Next(0, 3);
 
-        if (employee == present)
+        if (employee == parttime)
         {
-            fulldayperhours = 8;
-            Console.WriteLine("present");
+            workinghours =workinghours+ fulldayperhours;
+            Console.WriteLine("parttimer");
             
-        }
-        else
+
+}
+        else if (employee == present)
         {
-            fulldayperhours = 0;
+            workinghours = (fulldayperhours-workinghours)/2;
+            Console.WriteLine("present");
+
+}
+        else
+        { 
             Console.WriteLine("absent");
         }
 daliy_wage = fulldayperhours * wagesperhours;
 Console.WriteLine("daliy employee wage :" + daliy_wage);
-  
+
