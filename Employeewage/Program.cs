@@ -1,7 +1,7 @@
 ﻿
-Console.WriteLine("Welcome to Employee Wage Computation Program on Master Branch");
-        int fulldayperhours = 8;
-int workinghours=0;
+  Console.WriteLine("Welcome to Employee Wage Computation Program on Master Branch");
+      int fulldayperhours = 8;
+        int workinghours=0;
         int wagesperhours = 20;
         int present = 2;
         int parttime = 1;
