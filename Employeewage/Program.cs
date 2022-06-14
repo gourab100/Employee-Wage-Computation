@@ -1,31 +1,51 @@
 ﻿
-  Console.WriteLine("Welcome to Employee Wage Computation Program on Master Branch");
-      int fulldayperhours = 8;
-        int workinghours=0;
-        int wagesperhours = 20;
-        int present = 2;
-        int parttime = 1;
-        int daliy_wage = 0;
-        Random random = new Random();
-        int employee = random.Next(0, 3);
+Console.WriteLine("Welcome to Employee Wage Computation Program on Master Branch");
 
-        if (employee == parttime)
-        {
-            workinghours =workinghours+ fulldayperhours;
+const int present = 2;
+const int parttime = 1;
+int wagesperhours = 20;
+const int workingday = 20;
+const int maxworkinghours = 100;
+
+
+double totalwage = 0;
+int daliy_wage = 0;
+int emphrs = 0;
+
+int totalworkingdays = 0;
+int totalemphours = 0;
+
+while (totalemphours <= maxworkinghours && totalworkingdays < workingday)
+{
+    totalworkingdays++;
+    Random random = new Random();
+    int employee = random.Next(0, 3);
+
+
+    switch (employee)
+    {
+        case parttime:
+
+            const int parttimeperhours = 4;
             Console.WriteLine("parttimer");
-            
-
-}
-        else if (employee == present)
-        {
-            workinghours = (fulldayperhours-workinghours)/2;
+            daliy_wage = parttimeperhours * wagesperhours;
+            totalwage += daliy_wage;
+            Console.WriteLine("daliy employee wage :" + daliy_wage);
+            break;
+        case present:
+            const int fulldayperhours = 8;
             Console.WriteLine("present");
+            daliy_wage = fulldayperhours * wagesperhours;
+            totalwage += daliy_wage;
+            Console.WriteLine("daliy employee wage :" + daliy_wage);
+            break;
+        default:
+            Console.WriteLine("Absent");
+            break;
+    }
+    totalemphours += emphrs;
+    Console.WriteLine("days :" + totalworkingdays );
 
 }
-        else
-        { 
-            Console.WriteLine("absent");
-        }
-daliy_wage = fulldayperhours * wagesperhours;
-Console.WriteLine("daliy employee wage :" + daliy_wage);
+Console.WriteLine("total wage: " + totalwage);
 

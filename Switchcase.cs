@@ -1,17 +1,22 @@
-﻿using System;
+﻿Console.WriteLine("Welcome to Employee Wage Computation Program on Master Branch");
 
-Console.WriteLine("Welcome to Employee Wage Computation Program on Master Branch");
-
-int workinghours = 0;
-int wagesperhours = 20;
-double totalwage = 0;
 const int present = 2;
 const int parttime = 1;
-int daliy_wage = 0;
+int wagesperhours = 20;
 const int workingday = 20;
-for (int i = 0; i < workingday; i++)
-{
+const int maxworkinghours = 100;
 
+
+double totalwage = 0;
+int daliy_wage = 0;
+int emphrs = 0;
+
+int totalworkingdays = 0;
+int totalemphours = 0;
+
+while ( totalemphours <= maxworkinghours && totalworkingdays < workingday)
+{
+    totalworkingdays++;
     Random random = new Random();
     int employee = random.Next(0, 3);
 
@@ -37,6 +42,8 @@ for (int i = 0; i < workingday; i++)
             Console.WriteLine("Absent");
             break;
     }
+    totalemphours+=emphrs;
+    Console.WriteLine("days :" + totalworkingdays + " emp hrs " + emphrs);
 
 }
 Console.WriteLine("total wage: " + totalwage);
